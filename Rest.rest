@@ -1,0 +1,16 @@
+### Add a new car
+POST http://localhost:5000/car?name=nissan&year=2001&manuf=6216522b838827dde6903583&image=image2
+### See all cars
+GET http://localhost:5000/car
+### See all cars from a country
+GET http://localhost:5000/car/country/japan 
+### See all cars excluding specified manufacturers
+GET http://localhost:5000/car/exclude?manufacturer=toyota,nissan
+### Delete a car by its ID
+DELETE  http://localhost:5000/car/delete/6216c24b77b785f80973452f
+### Add a new manufacturer
+POST http://localhost:5000/manufacturer?name=ford&country=usa&logo=logo3
+### See all manufacturers
+GET http://localhost:5000/manufacturer
+### Delete a manufacturer by its ID
+DELETE  http://localhost:5000/manufacturer/delete/6216b126de00c96008a898f9
