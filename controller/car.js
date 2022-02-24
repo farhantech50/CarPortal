@@ -6,8 +6,8 @@ const {inspect} = require('util');
 const e = require('express');
 
 router.get("/",async (req,res)=>{
-    let carList = await car.find().populate({ path: 'manufacturer', model: 'manufacturer' });
-    res.send(inspect(carList,{depth:null}));
+    let carList = await car.find().populate({ path: 'manufacturer', model: 'manufacturer' }); //used populate to fetch the data from the linked collection
+    res.send(inspect(carList,{depth:null})); //used inspect to see the full details instead of object names
     
 })
 
