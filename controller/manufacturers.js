@@ -2,9 +2,9 @@ const express = require('express');
 const router = express.Router(); 
 const manufacturer = require('../model/manufacturerModel');
 
-router.get("/",async (req,res)=>{
-    await manufacturer.find((err,doc)=>{
-        console.log(doc);
+router.get("/", (req,res)=>{
+    manufacturer.find((err,doc)=>{
+        res.send(doc);
     })
 })
 
@@ -16,10 +16,10 @@ router.post("/",(req,res)=>{
     })
     manuf.save((err,doc)=>{
         if(!err){
-            res.redirect("/manufacturer");
+            res.send("New Manufacturer Added");
         }
         else {
-            console.log(err);
+            res.send(err);
         }
     });
   

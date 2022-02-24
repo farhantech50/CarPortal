@@ -23,7 +23,7 @@ router.post("/",(req,res)=>{
             res.send("New Car Added");
         }
         else {
-            console.log(err);
+            res.send(err);
         }
     });
   
