@@ -3,7 +3,6 @@ const router = express.Router();
 const car = require('../model/carModel');
 const manuf = require('../model/manufacturerModel');
 const {inspect} = require('util');
-const e = require('express');
 
 router.get("/",async (req,res)=>{
     let carList = await car.find().populate({ path: 'manufacturer', model: 'manufacturer' }); //used populate to fetch the data from the linked collection
